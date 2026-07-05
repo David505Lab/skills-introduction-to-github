@@ -1,0 +1,70 @@
+ESP32-S3 Digital Compass Project
+REQUIRED LIBRARIES
+==================
+
+Installation via Arduino IDE Library Manager:
+Tools > Manage Libraries > Search and Install
+
+1. Adafruit SSD1306
+   Author: Adafruit
+   Version: 2.5.10 (or latest)
+   Description: SSD1306 monochrome OLED display library
+   Link: https://github.com/adafruit/Adafruit_SSD1306
+   
+2. Adafruit GFX Library
+   Author: Adafruit
+   Version: 1.11.9 (or latest)
+   Description: Graphics library for drawing on displays
+   Link: https://github.com/adafruit/Adafruit-GFX-Library
+   
+3. Arduino Wire Library (Built-in)
+   Used for: I2C communication
+   No installation needed - included with ESP32 board support
+
+BOARD SUPPORT
+=============
+
+ESP32 by Espressif Systems
+Version: 2.0.0 (or latest)
+Installation:
+1. File > Preferences
+2. Add to "Additional Board Manager URLs":
+   https://raw.githubusercontent.com/espressif/arduino-esp32/gh-pages/package_esp32_index.json
+3. Tools > Board Manager
+4. Search for "esp32"
+5. Click Install
+
+INSTALLATION STEPS
+==================
+
+Step 1: Add ESP32 Board Support
+   a) Open Arduino IDE
+   b) Go to File > Preferences
+   c) In "Additional Board Manager URLs", paste:
+      https://raw.githubusercontent.com/espressif/arduino-esp32/gh-pages/package_esp32_index.json
+   d) Click OK
+   e) Go to Tools > Board > Boards Manager
+   f) Search for "esp32"
+   g) Click "Install" by Espressif Systems
+   h) Wait for installation to complete
+
+Step 2: Install Required Libraries
+   a) Go to Tools > Manage Libraries
+   b) Search for "Adafruit SSD1306"
+      - Click Install
+   c) Search for "Adafruit GFX Library"
+      - Click Install
+   d) Close Library Manager
+
+Step 3: Configure Board Settings
+   a) Tools > Board > ESP32 > "ESP32-S3"
+   b) Tools > Upload Speed > "921600"
+   c) Tools > CPU Frequency > "240 MHz"
+   d) Tools > Core Debug Level > "None"
+   e) Select appropriate COM port
+
+Step 4: Verify Installation
+   a) Open sketch: I2C_SCANNER.ino
+   b) Upload sketch
+   c) Open Serial Monitor (115200 baud)
+   d) Should see I2C device scan results
